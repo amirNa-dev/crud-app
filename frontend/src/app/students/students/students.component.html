@@ -1,0 +1,20 @@
+<button (click)="goToNew()">+ New</button>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let student of students">
+    <td>test</td>
+    <td>test</td>
+    <td>test</td>
+    <td>test</td>
+    <td>
+      <button (click)="goToEdit(student)">Edit</button>
+    </td>
+  </tr>
+</table>
+
