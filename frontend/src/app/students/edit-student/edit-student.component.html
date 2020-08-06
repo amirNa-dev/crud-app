@@ -1,3 +1,22 @@
-<p>
-  edit-student works!
-</p>
+<div class="student-form">
+  <form name="addForm" #addForm="ngForm" novalidate (ngSubmit)="addForm.valid && editStudent()">
+
+    <input type="text" placeholder="First Name" id="firstname" name="firstname" [(ngModel)]="students.firstname" #firstName="ngModel" required>
+    <p *ngIf="addForm.submitted && firstName.invalid">First Name is Required.</p>
+    
+    <input type="text" placeholder="Last Name" id="lastname" name="lastname" [(ngModel)]="students.lastname" #lastName="ngModel" required>
+    <p *ngIf="addForm.submitted && lastName.invalid">Last Name is Required.</p>
+
+    <input type="text" placeholder="Email" id="email" name="email" [(ngModel)]="students.email" #email="ngModel" required>
+    <p *ngIf="addForm.submitted && email.invalid">Email is Required.</p>
+
+    <select name="role" id="role" [(ngModel)]="students.role" required #role="ngModel">
+      <option value="">Select Role</option>
+      <option value="Artist">Artist</option>
+      <option value="Designer">Designer</option>
+      <option value="Art Manager">Art Manager</option>
+    </select>
+    <p *ngIf="addForm.submitted && role.invalid">Role is Required.</p>
+    <button>Edit Student</button>
+  </form>
+</div>

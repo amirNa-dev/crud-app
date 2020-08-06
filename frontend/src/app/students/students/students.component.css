@@ -4,10 +4,49 @@ table {
     margin-top: 15px;
 }
 td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid #c1c1c1;
     padding: 10px;
     text-align: left;
 }
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+.search-container {
+	margin:15px;
+	margin-top: 30px;
+	display: block;
+}
+input, select {
+    padding: 10px;
+    margin:5px;
+}
+.add-container {
+    float: right;
+}
+.add-container button {
+    padding: 10px 30px;
+    background-color: #23a51b;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    margin-right: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.delete {
+    background-color: red;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    padding: 4px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+.edit {
+    background-color: #505050;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    padding: 4px;
+    cursor: pointer;
 }

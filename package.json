@@ -1,0 +1,22 @@
+{
+  "name": "studentsCrud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "cd frontend && npm install && cd .. && cd backend && npm install",
+    "build":"cd frontend && npm i && node node_modules/.bin/ng build --output-path=public",
+    "serve": " cd frontend && node node_modules/.bin/ng serve --proxy-config proxy.conf.json",
+    "front": "http-server dist/",
+    "backend": "node ./backend/app.js",
+    "dev": "concurrently \"npm run front\" \"npm run backend\"",
+    "start": "concurrently \"npm run install\" \"npm run build\" \"npm run serve\" \"npm run backend\""
+  },
+  "author": "AmirNasehi",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
+

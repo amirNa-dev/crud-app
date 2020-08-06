@@ -6,9 +6,10 @@ import { StudentsRoutingModule } from './students-routing.module';
 import { StudentsComponent } from './students/students.component';
 import { NewStudentComponent } from './new-student/new-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import { MyFilterPipe } from './students.pipe';
 
 @NgModule({
-  declarations: [StudentsComponent, NewStudentComponent, EditStudentComponent],
+  declarations: [StudentsComponent, NewStudentComponent, EditStudentComponent, MyFilterPipe],
   imports: [
     CommonModule,
     StudentsRoutingModule,

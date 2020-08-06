@@ -1,4 +1,19 @@
-<button (click)="goToNew()">+ New</button>
+<div class="add-container">
+  <button (click)="goToNew()">+ New</button>
+</div>
+
+
+<div class="search-container">  
+  Search by: Role
+  <select (change)="onRoleChanged()" name="role" id="role" [(ngModel)]="filter.role">
+    <option value="">Select Role</option>
+    <option value="All">All</option>
+    <option value="Artist">Artist</option>
+    <option value="Designer">Designer</option>
+    <option value="Art Manager">Art Manager</option>
+  </select>
+  <input type="text" name="name" placeholder="Search..." [(ngModel)]="filter.text">
+</div>
 <table>
   <tr>
     <th>First Name</th>
@@ -7,13 +22,14 @@
     <th>Role</th>
     <th>Actions</th>
   </tr>
-  <tr *ngFor="let student of students">
-    <td>test</td>
-    <td>test</td>
-    <td>test</td>
-    <td>test</td>
+  <tr *ngFor="let student of students | myfilter: filter.text">
+    <td>{{student.firstname}}</td>
+    <td>{{student.lastname}}</td>
+    <td>{{student.email}}</td>
+    <td>{{student.role}}</td>
     <td>
-      <button (click)="goToEdit(student)">Edit</button>
+      <button (click)="goToEdit(student)" class="edit">Edit</button>
+      <button (click)="deleteStudent(student)" class="delete">Delete</button>
     </td>
   </tr>
 </table>

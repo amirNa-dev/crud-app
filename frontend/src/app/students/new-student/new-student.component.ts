@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentsService } from '../students.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-student',
@@ -9,13 +11,18 @@ export class NewStudentComponent implements OnInit {
 
   students:any = {};
 
-  constructor() { }
+  constructor(private studentsService:StudentsService, private router:Router) { }
 
   ngOnInit() {
   }
 
   addStudent() {
-    alert('test')
+    this.studentsService.createStudent(this.students).subscribe((data)=>{
+      alert('Saved successfully.');
+      this.router.navigate(['students']);
+    }, err=>{ 
+      alert('Error Occured. Check the email format.')
+    });
   }
 
 }
